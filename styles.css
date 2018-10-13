@@ -1,0 +1,87 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: sans-serif;
+    font-weight: bold;
+    width: 100%;
+}
+
+div#main-body{
+    width: 100%;
+    max-width: 500px;
+    margin: 0, auto;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main{
+    background-color: rgba(152, 156, 150, 0.171);
+}
+
+header{
+    background-color: rgba(128, 255, 0, 0.555);
+    padding: 10px 0;
+}
+header h2{
+    text-align: center;
+    color:  rgb(64, 117, 11);
+}
+
+fieldset{
+    background-color: white;
+    margin-top: 20px;
+    padding: 5px;
+    border: 0px;
+}
+
+input{
+    border: 0px;
+    border-bottom: 1px solid black;
+    width: 65%;
+    float: right;
+    padding-top: 10px;
+    font-size: 1.2em;
+}
+
+section#answers{
+    background-color:  rgba(128, 255, 0, 0.555);
+    text-align: center;
+}
+
+
+#button{
+    float: none;
+    font-size: 2em;
+    color: orange;
+    background-color: rgb(64, 117, 11);
+    border: 0;
+    text-align: center;
+    padding: 10px 0;
+    /*margin-left: 50px;   */
+    font-weight: bolder;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section#answers span{
+    color: orange;
+}
+
+footer{
+    height: 50px;
+    color: white;
+    background-color: grey;
+    text-align: center;
+}
+footer p{
+    position: relative;
+    top:25%;
+    font-size: 0.8em;
+}

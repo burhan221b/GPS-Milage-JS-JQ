@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>GPS Mileage Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+<body>
+
+    <div id="main-body">
+        <main>
+            <header>
+                <h2>Mileage Finder</h2>
+            </header>
+        <form>
+        <fieldset>
+            <label for="city">Name City</label>
+            <br />
+            <input type = "text" id="city"/>
+            <br />
+            <label for="state">Full name of State(i.e California)</label>
+            <br />
+            <input type = "text" id="state"/>
+            <br />
+        </fieldset>
+
+        <fieldset>
+            <label for="gas">Gas Price<br />(i.e. $2.21 per gallon)</label>
+            <br />
+            <input type = "number" id="gas"/>
+            <br />
+            <label for="gallon">How many MILES per 1 gallon on average <br />(i.e. 1 gallon = 20 miles in you vehicle)</label>
+            <br />
+            <input type = "number" id="gallon"/>
+
+            
+        </fieldset>
+
+        <fieldset>
+                <input type="button" value = "Find Distance" id="button"/>
+        </fieldset>
+            
+        </form>
+    <!--
+        <p> Location of (Select from Below: lat, lon): <br>
+            <select id ="city">
+                <option disabled selected value> -- select an option -- </option>
+                <option value = "1">Golden Gate Bridge, San Francisco, CA</option>
+                <option value = "2">Bridge Khalifa, Dubai, United Arab Emirates</option>
+                <option value = "3">Sydney Harbour Bridge, Sydney NSW, Australia</option>
+            </select>
+    -->
+    <!--        </p>-->
+        <section id="answers">
+
+        <p class="label"> Distance in miles <span id="chosen"></span>: <br>
+        <span id="distance"></span></p>
+        <p class="label"> Total Gas Price for Travel Est.<br>
+        <span id="message"></span></p>
+        <p class="label"> Round Trip.<br>
+        <span id="roundtrip"></span></p>
+        <p class="label">City location<br/>
+        <span id="topline"><span id="startLat">???</span>&deg;, <span id="startLon">???</span>&deg; </span></p>
+        <p class="label"> Your Current Location (lat, lon): <br>
+        <span id="currentLat"></span><span>&deg;,</span> <span id="currentLon"></span><span>&deg;</span> </p>
+    <!--            <p id="date"></p>-->
+        </section>
+        </main>
+        <footer>
+            <p>&copy;Copyright 2017 - 2018, Designed and Created By Burhan</p>
+        </footer>
+    </div>    
+        
+        
+        
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script> 
+    <script>
+//       below link help me find answer for select value 
+//        https://stackoverflow.com/questions/1085801/get-selected-value-in-dropdown-list-using-javascript
+//        window.onload = function() {
+//            var startPos;
+//            var startPosLat;
+//            var startPosLong;
+//            var distance;
+//            function loco(){
+//            if (navigator.geolocation) {
+//                var e = document.getElementById("city");
+//                var currentop = e.options[e.selectedIndex].value;
+//                if(currentop == 1){
+//                startPosLat = 37.819929;  // latitude of sjcc
+//                startPosLong = -122.478255;
+//                    document.getElementById("chosen").innerHTML = "Golden Gate Bridge";
+//                }
+//                else if(currentop == 2){
+//                startPosLat = 25.197197;  // latitude of sjcc
+//                startPosLong = 55.274376;
+//                    document.getElementById("chosen").innerHTML = "Bridge Khalifa";
+//                }
+//                else{
+//                startPosLat = -33.852306;  // latitude of sjcc
+//                startPosLong = 151.210787;
+//                    document.getElementById("chosen").innerHTML = "Sydney Harbour Bridge";
+//                }
+//
+//                $("#startLat").text(startPosLat);
+//                $("#startLon").text(startPosLong);
+//
+//                navigator.geolocation.watchPosition(function(position) {
+//                $("#currentLat").text(position.coords.latitude);
+//                $("#currentLon").text(position.coords.longitude);
+//                distance = calculateDistance(startPosLat, startPosLong,position.coords.latitude, position.coords.longitude)
+//                $("#distance").text(distance);
+//                if(distance < 1){
+//                $("#message").text("Yes, you are less than a mile from campus!")
+//                }else if(distance > 1){
+//                $("#message").text("No, you are farther away than a mile!")
+//                }
+//                });
+//            }
+//        };
+//               
+//        
+//
+//       var city = document.getElementById("city");
+//        
+//       city.addEventListener("change", loco, false);
+//
+//     function calculateDistance(lat1, lon1, lat2, lon2) {
+//       var R = 3956; // Radius of the Earth in miles (6371 km = 3956 mi)
+//       var dLat = (lat2-lat1).toRad();
+//       var dLon = (lon2-lon1).toRad();
+//       var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+//       Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) *
+//       Math.sin(dLon/2) * Math.sin(dLon/2);
+//       var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+//       var d = R * c;
+//       return d;
+//       }
+//       Number.prototype.toRad = function() {
+//       return this * Math.PI / 180;
+//       }
+//        }
+
+       </script>
+    
+
+    
+    
+    
+
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>    
+    <script src="main.js"></script>
+<!--    <script scr"https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json"></script>-->
+<!--    <script src="https://gist.github.com/Miserlou/c5cd8364bf9b2420bb29.js"></script>-->
+<!--    <script src="https://raw.githubusercontent.com/lutangar/cities.json/master/cities.json?callback=showEvents"></script>-->
+</body>
+</html>

@@ -1,0 +1,1 @@
+Simple app that calculates how much gas and the price it would take for a direct and round trip from your location to the location of your choice. At the momement it offers only your current location through Geolocation. Other Features will be added later. 
